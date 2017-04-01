@@ -15,6 +15,7 @@ void DisableDynamicBase(char* path)
 	else {
 		image.FileHeader->OptionalHeader.DllCharacteristics &= ~IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE;
 		printf("Dynamic Base Disabled!\n");
+		UnMapAndLoad(&image);
 	}
 }
 
